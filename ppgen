@@ -24,6 +24,7 @@ def gen_words(num_words=8):
     while x >= n and len(rval) < num_words:
         rval.append(words[x % n])
         x = x // n
+    return rval
     return ' '.join(rval)
 
 # words {{{
@@ -32,8 +33,11 @@ words = 'aardvark,aardwolf,aaron,aback,abacus,abaft,abalone,abandon,abandoned,ab
 n = len(words)
 
 if __name__ == "__main__":
-    num_words = 5
-    if len(sys.argv) > 1:
+    num_words = 3
+    sep = " "
+    if len(sys.argv) == 2:
         num_words = int(sys.argv[1])
+    if len(sys.argv) == 3:
+        sep = sys.argv[2]
     sys.stderr.write("Password Entropy: 2^%.2f\n\n" %(math.log(n**num_words, 2)))
-    print gen_words(num_words)
+    print sep.join(gen_words(num_words))
