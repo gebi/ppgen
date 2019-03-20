@@ -1,9 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 #
 # ppgen is a password phrase generator that returns n-word passphrases,
 # randomly picked from the 58,110 most-used words in the English language.
 # With this many words, a 5-word passphrase is enough to guarantee
 # ~80 bits of entropy (58110^8 ~= 2^80)
+
+from __future__ import print_function
 
 import os
 import sys
@@ -40,4 +42,4 @@ if __name__ == "__main__":
     if len(sys.argv) == 3:
         sep = sys.argv[2]
     sys.stderr.write("Password Entropy: 2^%.2f\n\n" %(math.log(n**num_words, 2)))
-    print sep.join(gen_words(num_words))
+    print(sep.join(gen_words(num_words)))
