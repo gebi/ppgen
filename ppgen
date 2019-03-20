@@ -4,6 +4,10 @@
 # randomly picked from the 58,110 most-used words in the English language.
 # With this many words, a 5-word passphrase is enough to guarantee
 # ~80 bits of entropy (58110^8 ~= 2^80)
+#
+# Author: Michael Gebetsroither
+# License: Apache 2
+# (c) 2019 Michael Gebetsroither <michael@mgeb.org>
 
 from __future__ import print_function
 
